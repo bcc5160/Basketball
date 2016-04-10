@@ -1,9 +1,11 @@
 {% load staticfiles %}
+{% block content %}
+
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">
-	<title>Testing jQuery Gracket Version 1.5.5</title>
+	<title>March Madness Predic</title>
 
 	<!-- basic styles -->
 	<style type="text/css">
@@ -29,7 +31,10 @@
 
 </head>
 <body>
-
+	dfsd
+	{% for game in allTeam %}
+		{{game.team}}
+	{% endfor %}
 	<!-- empty gracket element -->
 	<div class="my_gracket"></div>
 
@@ -38,33 +43,33 @@
 			
 			console.warn("Make sure the min-width of the .gracket_h3 element is set to width of the largest name/player. Gracket needs to build its canvas based on the width of the largest element. We do this my giving it a min width. I'd like to change that!");
 
-			// Fake Data
+			// Fake Data will be dynamically changed
 			win.TestData = [
 				[
-					[ {"name" : "Erik Zettersten", "id" : "erik-zettersten", "seed" : 1, "displaySeed": "D1", "score" : 47 }, {"name" : "Andrew Miller", "id" : "andrew-miller", "seed" : 2} ],
-					[ {"name" : "James Coutry", "id" : "james-coutry", "seed" : 3}, {"name" : "Sam Merrill", "id" : "sam-merrill", "seed" : 4}],
-					[ {"name" : "Anothy Hopkins", "id" : "anthony-hopkins", "seed" : 5}, {"name" : "Everett Zettersten", "id" : "everett-zettersten", "seed" : 6} ],
-					[ {"name" : "John Scott", "id" : "john-scott", "seed" : 7}, {"name" : "Teddy Koufus", "id" : "teddy-koufus", "seed" : 8}],
-					[ {"name" : "Arnold Palmer", "id" : "arnold-palmer", "seed" : 9}, {"name" : "Ryan Anderson", "id" : "ryan-anderson", "seed" : 10} ],
-					[ {"name" : "Jesse James", "id" : "jesse-james", "seed" : 1}, {"name" : "Scott Anderson", "id" : "scott-anderson", "seed" : 12}],
-					[ {"name" : "Josh Groben", "id" : "josh-groben", "seed" : 13}, {"name" : "Sammy Zettersten", "id" : "sammy-zettersten", "seed" : 14} ],
-					[ {"name" : "Jake Coutry", "id" : "jake-coutry", "seed" : 15}, {"name" : "Spencer Zettersten", "id" : "spencer-zettersten", "seed" : 16}]
+					[ {"name" : "Kansas", "id" : "1", "seed" : 1, "displaySeed": "1", "score" : 47 }, {"name" : "Austin Peay", "id" : "2", "seed" : 16} ],
+					[ {"name" : "Colorado", "id" : "3", "seed" : 8}, {"name" : "UConn", "id" : "4", "seed" : 9}],
+					[ {"name" : "Maryland", "id" : "5", "seed" : 5}, {"name" : "S. Dakota", "id" : "6", "seed" : 6} ],
+					[ {"name" : "California", "id" : "7", "seed" : 4}, {"name" : "Hawaii", "id" : "8", "seed" : 13}],
+					[ {"name" : "Arizona", "id" : "9", "seed" : 6}, {"name" : "Wichita State", "id" : "10", "seed" : 11} ],
+					[ {"name" : "Miami", "id" : "11", "seed" : 3}, {"name" : "Buffalo", "id" : "12", "seed" : 14}],
+					[ {"name" : "Iowa", "id" : "13", "seed" : 15}, {"name" : "Temple", "id" : "14", "seed" : 10} ],
+					[ {"name" : "Villanova", "id" : "15", "seed" : 2}, {"name" : "UNC Asheville", "id" : "16", "seed" : 15}]
 				], 
 				[
-					[ {"name" : "Erik Zettersten", "id" : "erik-zettersten", "seed" : 1}, {"name" : "James Coutry", "id" : "james-coutry", "seed" : 3} ],
-					[ {"name" : "Anothy Hopkins", "id" : "anthony-hopkins", "seed" : 5}, {"name" : "Teddy Koufus", "id" : "teddy-koufus", "seed" : 8} ],
-					[ {"name" : "Ryan Anderson", "id" : "ryan-anderson", "seed" : 10}, {"name" : "Scott Anderson", "id" : "scott-anderson", "seed" : 12} ],
-					[ {"name" : "Sammy Zettersten", "id" : "sammy-zettersten", "seed" : 14}, {"name" : "Jake Coutry", "id" : "jake-coutry", "seed" : 15} ]
+					[ {"name" : "Kansas", "id" : "1", "seed" : 1, "displaySeed": "1", "score" : 47 }, {"name" : "UConn", "id" : "4", "seed" : 9} ],
+					[ {"name" : "Maryland", "id" : "5", "seed" : 5}, {"name" : "Hawaii", "id" : "8", "seed" : 13} ],
+					[ {"name" : "Wichita State", "id" : "10", "seed" : 11}, {"name" : "Miami", "id" : "11", "seed" : 3} ],
+					[ {"name" : "Iowa", "id" : "13", "seed" : 15}, {"name" : "Villanova", "id" : "15", "seed" : 2} ]
 				],
 				[
-					[ {"name" : "Erik Zettersten", "id" : "erik-zettersten", "seed" : 1}, {"name" : "Anothy Hopkins", "id" : "anthony-hopkins", "seed" : 5} ],
-					[ {"name" : "Ryan Anderson", "id" : "ryan-anderson", "seed" : 10}, {"name" : "Sammy Zettersten", "id" : "sammy-zettersten", "seed" : 14} ]
+					[ {"name" : "Kansas", "id" : "1", "seed" : 1, "displaySeed": "1", "score" : 47 }, {"name" : "Maryland", "id" : "5", "seed" : 5} ],
+					[ {"name" : "Miami", "id" : "11", "seed" : 3}, {"name" : "Villanova", "id" : "15", "seed" : 2}]
 				],
 				[
-					[ {"name" : "Erik Zettersten", "id" : "erik-zettersten", "seed" : 1}, {"name" : "Ryan Anderson", "id" : "ryan-anderson", "seed" : 10} ]
+					[ {"name" : "Kansas", "id" : "1", "seed" : 1, "displaySeed": "1", "score" : 47 }, {"name" : "Villanova", "id" : "15", "seed" : 2} ]
 				],
 				[
-					[ {"name" : "Erik Zettersten", "id" : "erik-zettersten", "seed" : 1} ]
+					[ {"name" : "Villanova", "id" : "15", "seed" : 2}]
 				]
 			];
 
@@ -75,3 +80,5 @@
 	</script>
 </body>
 </html>
+
+{% endblock %}
