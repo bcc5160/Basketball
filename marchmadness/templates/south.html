@@ -33,7 +33,7 @@
 <body>
 	
 	{% for game in allTeam %}
-		[ {"name" : "Kansas", "id" : "1", "seed" : 1, "displaySeed": "1", "score" : 47 }, {"name" : "Austin Peay", "id" : "2", "seed" : 16} ],
+		{{game.team}}
 	{% endfor %}
 	<!-- empty gracket element -->
 	<div class="my_gracket"></div>
